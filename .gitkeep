@@ -1,4 +1,0 @@
-touch data/.gitkeep
-git add data/.gitkeep
-git commit -m "Add empty folder data"
-git push
