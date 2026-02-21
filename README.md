@@ -167,26 +167,7 @@ coverage html
 
 ---
 
-# Modèle Numérique
-
-## Collision élastique
-
-Pour deux particules de masses m₁ et m₂ :
-
-v₁' = v₁ − (2m₂/(m₁+m₂)) * ⟨Δv, Δx⟩ / ||Δx||² * Δx
-
-Ce modèle conserve :
-
-- La quantité de mouvement
-- L’énergie cinétique
-
----
-
 ## Validation Thermodynamique
-
-Pression estimée par la théorie cinétique :
-
-P = (1/3) m n ⟨v²⟩
 
 Une régression linéaire pression-température permet d’estimer la constante des gaz parfaits.
 
@@ -198,4 +179,5 @@ Présentation complète disponible dans :
 
 ```
 docs/Presentation_CW.pdf
+
 ```
