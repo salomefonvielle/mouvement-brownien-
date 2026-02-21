@@ -2,11 +2,7 @@
 
 # Importation des modules nécessaires
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
-import random
-import numpy as np
-from matplotlib.patches import Circle
-from interface_graphique.fonctions_auxiliaires import *
+from brownian_motion.physics.fonctions_auxiliaires import *
 
 # Définition de la fonction d'animation pour les particules
 

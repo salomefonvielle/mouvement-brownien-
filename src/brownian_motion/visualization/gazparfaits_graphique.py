@@ -5,7 +5,7 @@
 # import numpy as np
 # from matplotlib.patches import Circle
 
-from interface_graphique.fonctions_auxiliaires import *
+from brownian_motion.physics.fonctions_auxiliaires import *
 
 
 def courbe_GP(N, r, T):

@@ -1,4 +1,4 @@
-from interface_graphique.fonctions_auxiliaires import *
+from brownian_motion.visualization.fonctions_auxiliaires import *
 from pytest import *
 
 def test_place_particules():

@@ -4,14 +4,14 @@ import tkinter
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 
 # pour l'animation, faite avec matplotlib
-from interface_graphique.animation_particules import *
-from interface_graphique.animation_graphique import *
-from interface_graphique.gazparfaits_graphique import *
+from brownian_motion.visualization.animation_graphique import *
+from brownian_motion.visualization.gazparfaits_graphique import *
+from brownian_motion.visualization.animation_particules import *
 
 
 def genere_animation(widget, N, r, temperature, suivi):
     v_ini = np.sqrt(3 * 1.38*10**(-23)*temperature / (4.6*10**(-20)))
-    fig, animation1, init, dt = animation_part(N, r, v_ini, suivi)
+    fig, animation1, init, dt = animation_part(N, r, v_ini, suivi)  # au début j'avais animation_part
 
     ani = animation.FuncAnimation(
         fig, animation1, init_func=init, frames=800, interval=dt, repeat=False)
