@@ -1,63 +1,201 @@
 # Mouvement_Brownien_by_group_19
- 
 
-# Nom :
+# Simulation Physique du Mouvement Brownien
 
-Simulation Physique du mouvement Brownien 
+Projet réalisé lors de la deuxième semaine des Coding Weeks de CentraleSupélec (P2026).
 
-# Description
+Ce projet est consacré à la modélisation et à la simulation numérique du mouvement brownien, à travers une représentation d’un gaz parfait bidimensionnel composé de particules en collision élastique.
 
-Projet de deuxième semaine des Coding Weeks de CentraleSupelec P2026!
-Nous allons le consacrer à la modélisation/simulation du mouvement Brownien.
+---
 
-# Equipe 
+## Équipe
 
 
-- Salomé Fonvielle (Déleguée du groupe) : 20 ans, j'aime la physique ( et la philo !) 
-- Guillaume Dubois : J'aime la physique et l'escrime 
-- Vianney Parent: Etudiant à Cs, j'aime beaucoup la physique et la montagne !
-- Solène Duquenne : 19ans, vive le piano
-- Lucie Broutin: je fais de l'escrime et joue du violon
-- Hadrien Henriot: 20 ans, vive les fusées !
+- **Guillaume Dubois**
+- **Vianney Parent**
+- **Solène Duquenne**
+- **Lucie Broutin**
+- **Hadrien Henriot**
+- **Salomé Fonvielle** 
 
-# Définition du MVP 
-Représentation du mouvement Brownnien et des paramètres qui l'influencent 
+---
 
-# User story
+## Définition du MVP
 
-En tant qu’utilisateur, je veux pouvoir paramétrer la simulation en termes de température, de nombre de particules dans l'enceinte et de taille des particules.
+Représentation du mouvement brownien et des paramètres qui l’influencent :
 
-En tant qu’utilisateur, je veux pouvoir visualiser la particule suivie et la trajectoire que celle-ci décrit.
+- Température
+- Nombre de particules
+- Taille des particules
+- Visualisation de la trajectoire d’une particule suivie
+
+---
+
+## User Stories
+
+- En tant qu’utilisateur, je veux pouvoir paramétrer la simulation (température, nombre de particules, taille).
+- En tant qu’utilisateur, je veux visualiser la particule suivie et sa trajectoire.
+
+---
+
+## Organisation du Projet (Développement Progressif)
+
+### Objectif 1 : Marche aléatoire d’une particule
+
+- Jalon 1 : Déplacement aléatoire dans 4 directions
+- Jalon 2 : Déplacement aléatoire dans toutes les directions
+
+### Objectif 2 : Création d’un nuage de particules
+
+- Jalon 1 : Représentation fixe
+- Jalon 2 : Mise en mouvement aléatoire
+- Jalon 3 : Rebonds sur les bords
+
+### Objectif 3 : Collisions entre particules
+
+- Jalon 1 : Collisions entre toutes les particules
+- Jalon 2 : Suivi d’une particule particulière
+- Jalon 3 : Ajout de la trajectoire de la particule suivie
+
+### Objectif 4 : Interface graphique
+
+- Jalon 1 : Maquette
+- Jalon 2 : Implémentation simple
+- Jalon 3 : Paramétrage dynamique (sliders, boutons)
+
+### Objectif 5 : Améliorations (Bonus)
+
+- Mouvement brownien avec Pymunk
+- Vérification des lois physiques
+- Amélioration de l’interface
+- Tentative en 3D
+
+---
+
+# Modèle Scientifique
+
+Ce projet modélise un gaz parfait bidimensionnel constitué de particules rigides dans une enceinte carrée unité :
+
+- Collisions élastiques particule–particule
+- Collisions élastiques particule–paroi
+- Conservation de la quantité de mouvement
+- Conservation de l’énergie cinétique
+- Observation empirique de la distribution de Maxwell–Boltzmann
+- Vérification numérique de la loi des gaz parfaits
+
+# Structure du Projet
+
+```
+docs/                       # Présentation du projet
+experiments/                # Prototypes indépendants
+    ├── Marche_aleatoire/
+    └── Pymunk/
+
+src/brownian_motion/
+│
+├── physics/                # Moteur de simulation
+│   ├── definitions_objets.py
+│   └── fonctions_auxiliaires.py
+│
+├── visualization/          # Animation et interface graphique
+│   ├── animation_particules.py
+│   ├── animation_graphique.py
+│   ├── gazparfaits_graphique.py
+│   └── interface.py
+│
+└── __init__.py
 
 
-# Organisation du projet 
+tests/                      # Tests unitaires
 
-**Objectif 1 :** Marche aléatoire d'une particule
+```
 
-    ->Jalon1: Déplacement aléatoire d'un particule dans 4 directions
-    ->Jalon2: Déplacement aléatoire d'une particule dans toutes les directions
+---
 
-**Objectif 2 :** Création d'un nuage de particules
+# Installation
 
-    ->Jalon1: Représentation fixe du nuage 
-    ->Jalon2: Mise en mouvement du nuage (aléatoire pour la direction et la position initiale)
-    ->Jalon3: Rebonds sur les bords du cadre 
+Créer un environnement virtuel :
 
-**Objectif 3 :** Collisions entre toutes les particules et particule suivie
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
 
-    ->Jalon1: Mise en place de collisions entre toutes les particules
-    ->Jalon2: Suivi d'une particule particulière
-    ->Jalon3: Ajout de la trajectoire de la particule suivie
+Installer les dépendances :
 
-**Objectif 4 :** Création d'une interface graphique pour la simulation
+```bash
+pip install -r requirements.txt
+```
 
-    ->Jalon1: Création d'une maquette pour l'interface graphique
-    ->Jalon2: Implémentation simple de l'interface
-    ->Jalon3: Permettre le paramétrage de l'interface (sliders,boutons)
+Ou installer en mode editable :
 
-**Objectif 5 :** Amélioration, autre interface graphique, vérification de lois physiques (Bonus)
+```bash
+pip install -e .
+```
 
-    ->Jalon1: Mouvement brownien avec pymunk
-    ->Jalon2: Vérification de lois physiques par le modèle et mise en cohérence des grandeurs physiques
-    ->Jalon3: Qualité de l'interface graphique et options supplémentaires
-    ->Jalon4: tentative en 3D
+---
+
+# Lancer la Simulation
+
+```bash
+python -m brownian_motion.visualization.interface
+```
+
+L’interface permet :
+
+- Choix du nombre de particules
+- Réglage du rayon
+- Paramétrage de la température
+- Suivi d’une particule
+- Visualisation de la distribution des vitesses
+- Vérification numérique de la loi des gaz parfaits
+
+---
+
+# Tests
+
+```bash
+pytest
+```
+
+Couverture :
+
+```bash
+coverage run -m pytest
+coverage html
+```
+
+---
+
+# Modèle Numérique
+
+## Collision élastique
+
+Pour deux particules de masses m₁ et m₂ :
+
+v₁' = v₁ − (2m₂/(m₁+m₂)) * ⟨Δv, Δx⟩ / ||Δx||² * Δx
+
+Ce modèle conserve :
+
+- La quantité de mouvement
+- L’énergie cinétique
+
+---
+
+## Validation Thermodynamique
+
+Pression estimée par la théorie cinétique :
+
+P = (1/3) m n ⟨v²⟩
+
+Une régression linéaire pression-température permet d’estimer la constante des gaz parfaits.
+
+---
+
+# Documentation
+
+Présentation complète disponible dans :
+
+```
+docs/Presentation_CW.pdf
+```
