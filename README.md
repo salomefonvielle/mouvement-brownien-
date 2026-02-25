@@ -1,4 +1,4 @@
-# Mouvement_Brownien_by_group_19
+# Mouvement_Brownien
 
 # Simulation Physique du Mouvement Brownien
 
@@ -181,3 +181,4 @@ Présentation complète disponible dans :
 docs/Presentation_CW.pdf
 
 ```
+
