@@ -4,9 +4,9 @@ import tkinter
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 
 # pour l'animation, faite avec matplotlib
-from brownian_motion.visualization.animation_graphique import *
-from brownian_motion.visualization.gazparfaits_graphique import *
-from brownian_motion.visualization.animation_particules import *
+from visualization.animation_graphique import *
+from visualization.gazparfaits_graphique import *
+from visualization.animation_particules import *
 
 
 def genere_animation(widget, N, r, temperature, suivi):

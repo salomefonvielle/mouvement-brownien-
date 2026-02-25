@@ -91,7 +91,7 @@ experiments/                # Prototypes indépendants
     ├── Marche_aleatoire/
     └── Pymunk/
 
-src/brownian_motion/
+src/
 │
 ├── physics/                # Moteur de simulation
 │   ├── definitions_objets.py
@@ -101,7 +101,7 @@ src/brownian_motion/
 │   ├── animation_particules.py
 │   ├── animation_graphique.py
 │   ├── gazparfaits_graphique.py
-│   └── interface.py
+│  
 │
 └── __init__.py
 
@@ -109,7 +109,7 @@ src/brownian_motion/
 tests/                      # Tests unitaires
 
 ```
-
+interface.py   # Lancement de la simulation  
 ---
 
 # Installation
@@ -138,7 +138,7 @@ pip install -e .
 # Lancer la Simulation
 
 ```bash
-python -m brownian_motion.visualization.interface
+python -m interface
 ```
 
 L’interface permet :

@@ -4,7 +4,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from matplotlib.patches import Circle
-from brownian_motion.physics.definitions_objets import * 
+from physics.definitions_objets import * 
 
 # Fonction pour tracer une particule exceptionnelle (celle que l'on suit) en rouge
 

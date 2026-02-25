@@ -2,7 +2,7 @@
 
 # Importation des modules nécessaires
 import matplotlib.pyplot as plt
-from brownian_motion.physics.fonctions_auxiliaires import *
+from physics.fonctions_auxiliaires import *
 
 # Définition de la fonction d'animation pour les particules
 

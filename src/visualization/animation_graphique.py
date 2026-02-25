@@ -1,6 +1,6 @@
 # Graphique répartition des vitesses
 
-from brownian_motion.physics.fonctions_auxiliaires import *
+from physics.fonctions_auxiliaires import *
 
 # Définition de la fonction d'animation
 

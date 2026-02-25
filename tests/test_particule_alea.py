@@ -1,4 +1,4 @@
-from brownian_motion.visualization.definitions_objets import *
+from physics.definitions_objets import *
 from pytest import *
 import numpy as np
 
