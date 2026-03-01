@@ -1,184 +1,88 @@
-# Mouvement_Brownien
+# Gaz Parfait & Mouvement Brownien
 
-# Simulation Physique du Mouvement Brownien
+## Description du Projet
 
-Projet réalisé lors de la deuxième semaine des Coding Weeks de CentraleSupélec (P2026).
+Ce projet, réalisé dans le cadre des **Coding Weeks de CentraleSupélec (P2026)**, consiste en le développement d'un moteur de simulation physique bidimensionnel modélisant un gaz parfait composé de particules en collisions élastiques.
 
-Ce projet est consacré à la modélisation et à la simulation numérique du mouvement brownien, à travers une représentation d’un gaz parfait bidimensionnel composé de particules en collision élastique.
+L'objectif principal est de simuler le **Mouvement Brownien** et de valider numériquement les lois fondamentales de la thermodynamique à partir d'une approche multi-agents.
 
----
+### Points Forts Techniques & Scientifiques
 
-## Équipe
-
-
-- **Guillaume Dubois**
-- **Vianney Parent**
-- **Solène Duquenne**
-- **Lucie Broutin**
-- **Hadrien Henriot**
-- **Salomé Fonvielle** 
+- **Moteur Physique Micro-Macro** : Implémentation d'un modèle de sphères dures avec gestion des collisions élastiques. Le moteur garantit la conservation de la quantité de mouvement et de l'énergie cinétique.
+- **Validation Thermodynamique** :
+    - Vérification empirique de la **Loi des Gaz Parfaits** ($PV = nRT$) via une régression linéaire pression-température.
+    - Observation de la convergence vers la **distribution des vitesses de Maxwell-Boltzmann**.
+- **Interface Interactive** : Développement d'une GUI (Tkinter + Matplotlib) permettant le pilotage dynamique de la simulation (température, densité, rayon des particules, suivi de trajectoire).
+- **Architecture Logicielle** : Structure modulaire, gestion des dépendances et validation par tests unitaires automatisés.
 
 ---
 
-## Définition du MVP
+## Fonctionnalités (MVP)
 
-Représentation du mouvement brownien et des paramètres qui l’influencent :
-
-- Température
-- Nombre de particules
-- Taille des particules
-- Visualisation de la trajectoire d’une particule suivie
+- **Paramétrage dynamique** : Température, nombre de particules, taille.
+- **Visualisation interactive** : Animation en temps réel des particules dans une enceinte carrée.
+- **Suivi de particule** : Tracé en temps réel de la trajectoire d'une particule spécifique pour illustrer le mouvement brownien.
+- **Analyses Graphiques** : Distribution des vitesses et vérification de la loi des gaz parfaits.
 
 ---
 
-## User Stories
-
-- En tant qu’utilisateur, je veux pouvoir paramétrer la simulation (température, nombre de particules, taille).
-- En tant qu’utilisateur, je veux visualiser la particule suivie et sa trajectoire.
-
----
-
-## Organisation du Projet (Développement Progressif)
-
-### Objectif 1 : Marche aléatoire d’une particule
-
-- Jalon 1 : Déplacement aléatoire dans 4 directions
-- Jalon 2 : Déplacement aléatoire dans toutes les directions
-
-### Objectif 2 : Création d’un nuage de particules
-
-- Jalon 1 : Représentation fixe
-- Jalon 2 : Mise en mouvement aléatoire
-- Jalon 3 : Rebonds sur les bords
-
-### Objectif 3 : Collisions entre particules
-
-- Jalon 1 : Collisions entre toutes les particules
-- Jalon 2 : Suivi d’une particule particulière
-- Jalon 3 : Ajout de la trajectoire de la particule suivie
-
-### Objectif 4 : Interface graphique
-
-- Jalon 1 : Maquette
-- Jalon 2 : Implémentation simple
-- Jalon 3 : Paramétrage dynamique (sliders, boutons)
-
-### Objectif 5 : Améliorations (Bonus)
-
-- Mouvement brownien avec Pymunk
-- Vérification des lois physiques
-- Amélioration de l’interface
-- Tentative en 3D
-
----
-
-# Modèle Scientifique
-
-Ce projet modélise un gaz parfait bidimensionnel constitué de particules rigides dans une enceinte carrée unité :
-
-- Collisions élastiques particule–particule
-- Collisions élastiques particule–paroi
-- Conservation de la quantité de mouvement
-- Conservation de l’énergie cinétique
-- Observation empirique de la distribution de Maxwell–Boltzmann
-- Vérification numérique de la loi des gaz parfaits
-
-# Structure du Projet
+## Structure du Projet
 
 ```
-docs/                       # Présentation du projet
-experiments/                # Prototypes indépendants
-    ├── Marche_aleatoire/
-    └── Pymunk/
-
 src/
-│
-├── physics/                # Moteur de simulation
+├── physics/                # Moteur de simulation (physique & calculs)
 │   ├── definitions_objets.py
 │   └── fonctions_auxiliaires.py
-│
 ├── visualization/          # Animation et interface graphique
 │   ├── animation_particules.py
 │   ├── animation_graphique.py
-│   ├── gazparfaits_graphique.py
-│  
-│
-└── __init__.py
+│   └── gazparfaits_graphique.py
+└── main.py                 # Point d'entrée de l'application (Tkinter)
 
-
-tests/                      # Tests unitaires
-
-```
-interface.py   # Lancement de la simulation  
----
-
-# Installation
-
-Créer un environnement virtuel :
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
-
-Installer les dépendances :
-
-```bash
-pip install -r requirements.txt
-```
-
-Ou installer en mode editable :
-
-```bash
-pip install -e .
+tests/                      # Tests unitaires (Pytest)
+docs/                       # Présentation et documentation
+experiments/                # Prototypes (Marche aléatoire, Pymunk)
 ```
 
 ---
 
-# Lancer la Simulation
+## Installation & Utilisation
 
+### Installation
+
+1. Créer un environnement virtuel :
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate  # Sur Linux/macOS
+   ```
+2. Installer les dépendances :
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### Lancement
+
+Pour démarrer l'interface interactive :
 ```bash
-python -m interface
+export PYTHONPATH=$PYTHONPATH:$(pwd)/src
+python src/main.py
 ```
 
-L’interface permet :
+### Tests
 
-- Choix du nombre de particules
-- Réglage du rayon
-- Paramétrage de la température
-- Suivi d’une particule
-- Visualisation de la distribution des vitesses
-- Vérification numérique de la loi des gaz parfaits
+Pour exécuter les tests unitaires :
+```bash
+export PYTHONPATH=$PYTHONPATH:$(pwd)/src
+pytest tests/
+```
 
 ---
 
-# Tests
+## Équipe (Groupe 4 - Coding Weeks)
 
-```bash
-pytest
-```
-
-Couverture :
-
-```bash
-coverage run -m pytest
-coverage html
-```
-
----
-
-## Validation Thermodynamique
-
-Une régression linéaire pression-température permet d’estimer la constante des gaz parfaits.
-
----
-
-# Documentation
-
-Présentation complète disponible dans :
-
-```
-docs/Presentation_CW.pdf
-
-```
-
+- Guillaume Dubois
+- Vianney Parent
+- Solène Duquenne
+- Lucie Broutin
+- Hadrien Henriot
+- Salomé Fonvielle
