@@ -1,5 +1,3 @@
-# Mouvement_Brownien
-
 # Simulation Physique du Mouvement Brownien
 
 Projet réalisé lors de la deuxième semaine des Coding Weeks de CentraleSupélec (P2026).
